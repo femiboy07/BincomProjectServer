@@ -1,0 +1,17 @@
+{
+   "compilerOptions": {
+      "target": "es2017", // Use a modern target for async/await, decorators, etc.
+      "module": "NodeNext", // For Node's native ESM support (available in Node 16+)
+      "moduleResolution": "nodenext",
+      "lib": [
+         "es2017"
+      ], // Use a modern lib that matches your target
+      "outDir": "./build",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
+      "strict": true, // Enable strict type-checking options
+      "esModuleInterop": true, // Better interoperability with CommonJS modules
+      "skipLibCheck": true // Skip type checking of declaration files to speed up compilation
+   }
+}

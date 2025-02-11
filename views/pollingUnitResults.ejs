@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling Unit Results</title>
+</head>
+
+<body>
+    <h1>Polling Unit Results - <%= pollingUnitId %>
+    </h1>
+
+    <% if (results.length===0) { %>
+        <p>No results found for this polling unit.</p>
+        <% } else { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Result ID</th>
+                        <th>Polling Unit Unique ID</th>
+                        <th>Polling Unit Name</th>
+                        <th>Ward Name</th>
+                        <th>LGA Name</th>
+                        <th>Party Abbreviation</th>
+                        <th>Party Score</th>
+                        <th>Entered By</th>
+                        <th>Date Entered</th>
+                        <th>User IP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% results.forEach(result=> { %>
+                        <tr>
+                            <td>
+                                <%= result.result_id %>
+                            </td>
+                            <td>
+                                <%= result.polling_unit_uniqueid %>
+                            </td>
+                            <td>
+                                <%= result.polling_unit_name %>
+                            </td>
+                            <td>
+                                <%= result.ward_name %>
+                            </td>
+                            <td>
+                                <%= result.lga_name %>
+                            </td>
+                            <td>
+                                <%= result.party_abbreviation %>
+                            </td>
+                            <td>
+                                <%= result.party_score %>
+                            </td>
+                            <td>
+                                <%= result.entered_by_user %>
+                            </td>
+                            <td>
+                                <%= result.date_entered.toISOString().substring(0, 19).replace('T', ' ' ) %>
+                            </td>
+                            <td>
+                                <%= result.user_ip_address %>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
+            <% } %>
+</body>
+
+</html>
